@@ -1,0 +1,90 @@
+import bpy, bge, csv
+
+path = "kalmanData.csv"s
+with open(path) as csvfile:
+    content = csv.reader(csvfile, delimiter=',', dialect='excel')
+    for i, row in enumerate (content):
+        if i==0: continue
+        Q1R1 = column[0]
+        Q2R1 = column[1]
+        Q3R1 = column[2]
+        Q4R1 = column[3]
+        
+        Q1R2 = column[4]
+        Q2R2 = column[5]
+        Q3R2 = column[6]
+        Q4R2 = column[7]
+        
+        Q1R3 = column[8]
+        Q2R3 = column[9]
+        Q3R3 = column[10]
+        Q4R3 = column[11]
+        
+        Q1R4 = column[12]
+        Q2R4 = column[13]
+        Q3R4 = column[14]
+        Q4R4 = column[15]
+        
+        Q1R5 = column[16]
+        Q2R5 = column[17]
+        Q3R5 = column[18]
+        Q4R5 = column[19]
+        
+        Q1R6 = column[20]
+        Q2R6 = column[21]
+        Q3R6 = column[22]
+        Q4R6 = column[23]
+        
+        Q1R7 = column[24]
+        Q2R7 = column[25]
+        Q3R7 = column[26]
+        Q4R7 = column[27]
+        
+        Q1R8 = column[28]
+        Q2R8 = column[29]
+        Q3R8 = column[30]
+        Q4R8 = column[31]
+        
+        Q1R9 = column[32]
+        Q2R9 = column[33]
+        Q3R9 = column[34]
+        Q4R9 = column[34]
+        
+        Q1R10 = column[35]
+        Q2R10 = column[36]
+        Q3R10 = column[37]
+        Q4R10 = column[38]
+        
+        Q1R11 = column[39]
+        Q2R11 = column[40]
+        Q3R11 = column[41]
+        Q4R11 = column[42]
+        
+        Q1R12 = column[43]
+        Q2R12 = column[44]
+        Q3R12 = column[45]
+        Q4R12 = column[46]
+        
+        Q1R13 = column[47]
+        Q2R13 = column[48]
+        Q3R13 = column[49]
+        Q4R13 = column[50]
+        
+        Q1R14 = column[51]
+        Q2R14 = column[52]
+        Q3R14 = column[53]
+        Q4R14 = column[54]
+        
+        bpy.ops.import_scene.fbx( filepath = dir )
+        bpy.ops.transform.translate(value=(float(loc_x), float(loc_y), float(loc_z)))
+        bpy.ops.transform.resize(value=(float(scale_x), float(scale_y), float(scale_z)))
+        for obj in bpy.context.selected_objects:
+            a = obj.name
+            print(a)
+            bpy.context.scene.objects.active = bpy.data.objects[a]
+            bpy.context.object.rotation_mode = 'QUATERNION'
+            bpy.context.object.rotation_mode = 'QUATERNION'
+            bpy.context.object.rotation_quaternion[0] = float(rot_w)
+            bpy.context.object.rotation_quaternion[1] = float(rot_x)
+            bpy.context.object.rotation_quaternion[2] = float(rot_y)
+            bpy.context.object.rotation_quaternion[3] = float(rot_z)

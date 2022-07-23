@@ -1,0 +1,93 @@
+import bpy
+import pandas as pd
+import time
+import math
+
+ob = bpy.data.objects['Armature']
+bpy.context.scene.objects.active = ob
+bpy.ops.object.mode_set(mode='POSE')
+R1 = ob.pose.bones['R1']
+R2 = ob.pose.bones['R2']
+R3 = ob.pose.bones['R3']
+R4 = ob.pose.bones['R4']
+R5 = ob.pose.bones['R5']
+R6 = ob.pose.bones['R6']
+R7 = ob.pose.bones['R7']
+L1 = ob.pose.bones['L1']
+L2 = ob.pose.bones['L2']
+L3 = ob.pose.bones['L3']
+L4 = ob.pose.bones['L4']
+L5 = ob.pose.bones['L5']
+L6 = ob.pose.bones['L6']
+L7 = ob.pose.bones['L7']
+
+R1.rotation_mode = 'XYZ'
+R2.rotation_mode = 'XYZ'
+R3.rotation_mode = 'XYZ'
+R4.rotation_mode = 'XYZ'
+R5.rotation_mode = 'XYZ'
+R6.rotation_mode = 'XYZ'
+R7.rotation_mode = 'XYZ'
+L1.rotation_mode = 'XYZ'
+L2.rotation_mode = 'XYZ'
+L3.rotation_mode = 'XYZ'
+L4.rotation_mode = 'XYZ'
+L5.rotation_mode = 'XYZ'
+L6.rotation_mode = 'XYZ'
+L7.rotation_mode = 'XYZ'
+
+url = 'https://raw.githubusercontent.com/ravennaras/FinalProject/master/KalmanData.csv'
+df = pd.read_csv(url, sep='\;', engine='python')
+df.head()
+
+#scriptnya disini
+#"""
+for index, row in df.iterrows():
+    R1.rotation_euler = math.radians(row[0]), math.radians(row[1]), math.radians(row[2])
+    print(row[0],row[1],row[2])
+    R2.rotation_euler = math.radians(row[3]), math.radians(row[4]), math.radians(row[5])
+    print(row[3],row[4],row[5])
+    R3.rotation_euler = math.radians(row[6]), math.radians(row[7]), math.radians(row[8])
+    print(row[6],row[7],row[8])
+    R4.rotation_euler = math.radians(row[9]), math.radians(row[10]), math.radians(row[11])
+    print(row[9],row[10],row[11])
+    R5.rotation_euler = math.radians(row[12]), math.radians(row[13]), math.radians(row[14])
+    print(row[12],row[13],row[14])
+    R6.rotation_euler = math.radians(row[15]), math.radians(row[16]), math.radians(row[17])
+    print(row[15],row[16],row[17])
+    R7.rotation_euler = math.radians(row[18]), math.radians(row[19]), math.radians(row[20])
+    print(row[18],row[19],row[20])
+    L1.rotation_euler = math.radians(row[21]), math.radians(row[22]), math.radians(row[23])
+    print(row[21],row[22],row[23])
+    L2.rotation_euler = math.radians(row[24]), math.radians(row[25]), math.radians(row[26])
+    print(row[24],row[25],row[26])
+    L3.rotation_euler = math.radians(row[27]), math.radians(row[28]), math.radians(row[29])
+    print(row[27],row[28],row[29])
+    L4.rotation_euler = math.radians(row[30]), math.radians(row[31]), math.radians(row[32])
+    print(row[30],row[31],row[32])
+    L5.rotation_euler = math.radians(row[33]), math.radians(row[34]), math.radians(row[35])
+    print(row[33],row[34],row[35])
+    L6.rotation_euler = math.radians(row[36]), math.radians(row[37]), math.radians(row[38])
+    print(row[36],row[37],row[38])
+    L7.rotation_euler = math.radians(row[39]), math.radians(row[40]), math.radians(row[41])
+    print(row[39],row[40],row[41])
+    print(" ")
+    time.sleep(0.5)      
+#"""
+#buat balikin ke default T-Pose mode     
+"""  
+R1.rotation_euler = (0,0,0)
+R2.rotation_euler = (0,0,0)
+R3.rotation_euler = (0,0,0)
+R4.rotation_euler = (0,0,0)
+R5.rotation_euler = (0,0,0)
+R6.rotation_euler = (0,0,0)
+R7.rotation_euler = (0,0,0)
+L1.rotation_euler = (0,0,0)
+L2.rotation_euler = (0,0,0)
+L3.rotation_euler = (0,0,0)
+L4.rotation_euler = (0,0,0)
+L5.rotation_euler = (0,0,0)
+L6.rotation_euler = (0,0,0)
+L7.rotation_euler = (0,0,0)
+"""
